@@ -1,0 +1,128 @@
+#header {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(158, 158, 182, 0.726);
+    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 10px #2e2e2e54;
+}
+.header_logo {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+.header_logo h1 {
+    font-weight: 500;
+}
+.header_logo em {
+    display: block;
+    font-size: 12px;
+}
+.header_nav {
+}
+.header_nav ul {
+    display: flex;
+}
+.header_nav ul li {
+}
+.header_nav ul li a {
+    display: inline-block;
+    font-size: 14px;
+    padding: 14px;
+    text-transform: uppercase;
+    position: relative;
+}
+.header_nav ul li a::after {
+    content: "";
+    width: calc(100% - 28px);
+    height: 1px;
+    background-color: var(--black);
+    position: absolute;
+    left: 14px;
+    bottom: 0;
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+.header_nav ul li a:hover:after {
+    transform: scale(1);
+}
+.header_nav_mobile {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+}
+.header_nav_mobile span {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--black);
+    position: relative;
+    margin-top: 19px;
+}
+.header_nav_mobile span::before {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: var(--black);
+    position: absolute;
+    right: 0;
+    top: 6px;
+    transition: width 0.3s;
+}
+.header_nav_mobile span::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: var(--black);
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    transition: width 0.3s;
+}
+
+@media (max-width: 800px) {
+    .header_nav_mobile {
+        display: block;
+    }
+    .header_nav {
+        display: none;
+    }
+    .header_nav.show {
+        display: block;
+    }
+    .header_nav.show ul {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 68px;
+        background-color: rgba(107, 107, 107, 0.938);
+        padding: 20px 28px 20px 28px;
+    }
+    .header_nav.show ul li {
+        text-align: center;
+        padding: 14px 0;
+    }
+    .header_nav.show ul li a {
+        padding: 14px 0;
+    }
+    .header_nav.show ul li a::after {
+        width: 100%;
+        left: 0px;
+    }
+    .header_nav.show + .header_nav_mobile span::before {
+        width: 20px;
+    }
+    .header_nav.show + .header_nav_mobile span::after {
+        width: 20px;
+    }
+}

@@ -1,0 +1,118 @@
+#footer {
+    font-family: var(--mainKor-font);
+}
+.footer_inner {
+    padding: 16px;
+}
+.footer_text {
+    font-size: 13px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+}
+.footer_info {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 0;
+}
+.footer_info .left {
+    width: 40%;
+}
+.footer_info .left .title {
+    border-top: 2px solid var(--black);
+    border-bottom: 1px solid var(--black);
+
+    text-transform: uppercase;
+    font-weight: 700;
+
+    /* background: url(../../img/arrow.svg) no-repeat right 20px; */
+}
+.footer_info .left .title a {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    transition: all 0.3s;
+}
+.footer_info .left .title a:hover {
+    background-color: var(--black);
+    padding-left: 10px;
+    color: var(--white100);
+}
+
+.footer_info .left .title a:hover svg path {
+    fill: var(--white100);
+}
+.footer_info .left .desc {
+    font-size: 13px;
+    padding-top: 20px;
+    color: var(--black100);
+}
+
+.footer_info .right {
+    width: 50%;
+}
+.footer_info .right h3 {
+    border-top: 2px solid var(--black);
+    font-size: 10px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    color: var(--black);
+}
+.footer_info .right ul {
+    border-top: 1px solid var(--black);
+}
+.footer_info .right ul li {
+    border-bottom: 1px solid var(--black);
+}
+.footer_info .right ul li a {
+    display: inline-block;
+    padding: 14px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--black100);
+}
+
+.footer_info .right ul li em {
+    font-size: 12px;
+    padding-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.footer_info .right ul li:hover em {
+    opacity: 1;
+}
+.footer_capyright {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: var(--black100);
+}
+
+@media (max-width: 800px) {
+    .footer_info {
+        flex-direction: column;
+    }
+    .footer_info .right {
+        width: 100%;
+    }
+    .footer_info .left {
+        width: 100%;
+    }
+    .footer_info .left .desc {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_info .right ul li em {
+        display: block;
+        padding-left: 0;
+        padding-bottom: 10px;
+    }
+    .footer_info .right ul li a {
+        padding: 5px 0;
+    }
+}
